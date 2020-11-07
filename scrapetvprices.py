@@ -12,6 +12,10 @@ urlbh='https://www.bhphotovideo.com/c/product/1545417-REG/sony_xbr65x900h_x900h_
 urlamzn='https://www.amazon.com/dp/B084KQLVFH'
 urlamzntcl='https://www.amazon.com/dp/B0885N17CC'
 urlbhtcl='https://www.bhphotovideo.com/c/product/1584065-REG/tcl_65r635_65_6_serie_4k_hdr.html'
+urlbba8h='https://www.bestbuy.com/site/sony-65-class-a8h-series-oled-4k-uhd-smart-android-tv/6401203.p?skuId=6401203'
+urlamzna8h='https://www.amazon.com/Sony-A8H-65-Inch-Compatibility/dp/B084KQLVKH/'
+urlbha8h='https://www.bhphotovideo.com/c/product/1545413-REG/sony_xbr65a8h_a8h_65_class_hdr.html'
+
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 
 def get_data_costco(url):
@@ -67,6 +71,10 @@ pricebh = get_data_bh(urlbh)
 pricebbtcl = get_data_bb(urlbbtcl)
 #priceamzntcl = get_data_amzn(urlamzntcl)
 pricebhtcl = get_data_bh(urlbhtcl)
+pricebba8h = get_data_bb(urlbba8h)
+priceamzna8h = get_data_amzn(urlamzna8h)
+pricebha8h = get_data_bh(urlbha8h)
+
 now = datetime.datetime.now()
 
 f = open('/home/drkhoe/public_html/prices.html','w')
@@ -119,6 +127,25 @@ f.write("<meta property='pricebhtcl' content='")
 f.write(pricebhtcl.text)
 f.write("'>")
 f.write(pricebhtcl.text)
+f.write("</meta>")
+f.write("<h1>Sony A8H OLED</h1>\n")
+f.write("<p>Bestbuy: \n")
+f.write("<meta property='pricebba8h' content='")
+f.write(pricebba8h.text)
+f.write("'>")
+f.write(pricebba8h.text)
+f.write("</meta>")
+f.write("<p>Amazon: \n")
+f.write("<meta property='priceamzna8h' content='")
+f.write(priceamzna8h.text)
+f.write("'>")
+f.write(priceamzna8h.text)
+f.write("</meta>")
+f.write("<p>B&H: \n")
+f.write("<meta property='pricebha8h' content='")
+f.write(pricebha8h.text)
+f.write("'>")
+f.write(pricebha8h.text)
 f.write("</meta>")
 f.close
 quit()
