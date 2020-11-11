@@ -52,7 +52,7 @@ def get_data_amzn(url):
     )
     webpage = urllib.request.urlopen(req).read()
     soup = BeautifulSoup(webpage, "lxml")
-    return soup.find('span',class_="priceBlockBuyingPriceString")
+    return soup.find('span',class_="a-color-price")
 
 def get_data_bh(url):
     req = urllib.request.Request(
