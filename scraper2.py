@@ -26,7 +26,7 @@ def get_price(url):
     if 'costco' in url:
         pricetag = soup.find("meta",property="product:price:amount")
         if pricetag is not None:
-            xprice.append(pricetag.get('content'))
+            xprice.append("$" + pricetag.get('content'))
         else:
             xprice.append('notfound')
     elif 'bestbuy' in url:
@@ -51,11 +51,13 @@ def get_price(url):
     if titletag:
        if 'bhphotovideo' in url:
            xtitle.append('B&H: ' + titletag)
+       elif 'costco' in url:
+           xtitle.append('Costco: ' + titletag)
        else:
            xtitle.append(titletag)
 
 # open urls.txt which is the URLs file
-with open('urls.txt') as f:
+with open('/home/drkhoe/mattermostscripts/urls.txt') as f:
    urls = f.read().splitlines()
 
 # process the URLs
@@ -72,8 +74,7 @@ fhtml = open('/home/drkhoe/public_html/prices.html','w')
 fhtml.write("Updated: " + now.strftime("%h-%d-%y %H:%M") + "<br>")
 
 for bb in range(len(xprice)):
-    if bb:
-       fhtml.write("<h2>" + xprice[bb] + " >> " + xtitle[bb])
+    fhtml.write("<h2>" + xprice[bb] + " >> " + xtitle[bb])
 
 f.close()
 fhtml.close()
