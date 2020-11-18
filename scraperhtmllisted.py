@@ -91,12 +91,12 @@ fhtml = open('/home/drkhoe/public_html/pricesx.html','w')
 # sort into product lists
 lendesc = len(xtitle)
 
-fhtml.write("<!DOCTYPE html>")
-fhtml.write("<head>")
-fhtml.write("<title>TV Price Scraper Output</title>")
-fhtml.write('<link rel="stylesheet" href="style.css"/>')
-fhtml.write("</head><body>")
-fhtml.write('<table class="styled-table">')
+fhtml.write("<!DOCTYPE html>\n")
+fhtml.write("<head>\n")
+fhtml.write("<title>TV Price Scraper Output</title>\n")
+fhtml.write('<link rel="stylesheet" href="style.css"/>\n')
+fhtml.write("</head><body>\n")
+fhtml.write('<table class="styled-table">\n')
 
 for jj in range(lendesc):
    if xtitle[jj] not in xmodels:
@@ -106,14 +106,14 @@ lenmodels = len(xmodels)
 # iterate list and write html
 for jj in range(lenmodels):
     fhtml.write('<thead><tr><th colspan="3">')
-    fhtml.write(xmodels[jj] + "</th></tr></thead>")
+    fhtml.write(xmodels[jj] + "</th></tr></thead>\n")
     for xx in range(lendesc):
         if xtitle[xx] in xmodels[jj]:
-            fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '" target=_newlookup>Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
-fhtml.write("</table>")
+            fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '" target=_newlookup>Click Here</a></td><td>' + xprice[xx] + "</td></tr>\n")
+fhtml.write("</table>\n")
 
 # write update time to HTML file
-fhtml.write("Updated: " + now.strftime("%h-%d-%y %H:%M") + "<br>")
+fhtml.write("Updated: " + now.strftime("%h-%d-%y %H:%M") + "<br>\n")
 fhtml.write("</body>")
 
 f.close()
