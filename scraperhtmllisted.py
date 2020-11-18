@@ -105,7 +105,7 @@ for xx in range(lendesc):
    ytitle = xtitle[xx]
    fhtml.write(ytitle + "</th></tr></thead>")
    for yy in range(lendesc):
-    if xtitle[yy] = ytitle:
+    if xtitle[yy] in ytitle:
         fhtml.write("<tr><td>" + xvendor[yy] + '</td><td><a href="' + xurl[yy] + '">Click Here</a></td><td>"' + xprice[yy] + "</td></tr>")
 fhtml.write("</table>")
 
