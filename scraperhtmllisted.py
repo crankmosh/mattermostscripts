@@ -106,7 +106,7 @@ lenmodels = len(xmodels)
 # iterate list and write html
 for xx in range(lendesc):
    fhtml.write("<thead><tr><th colspan=0>")
-   fhtml.write(ytitle + "</th></tr></thead>")
+   fhtml.write(xmodels[xx] + "</th></tr></thead>")
    if xtitle[xx] in xmodels[xx]:
         fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '">Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
 fhtml.write("</table>")
