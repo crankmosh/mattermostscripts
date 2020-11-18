@@ -104,10 +104,11 @@ for jj in range(lendesc):
 
 lenmodels = len(xmodels)    
 # iterate list and write html
-for xx in range(lendesc):
-   fhtml.write("<thead><tr><th colspan=0>")
-   fhtml.write(xmodels[xx] + "</th></tr></thead>")
-   if xtitle[xx] in xmodels[xx]:
+for jj in range(lenmodels):
+    for xx in range(lendesc):
+    fhtml.write('<thead><tr><th colspan="0">')
+    fhtml.write(xmodels[jj] + "</th></tr></thead>")
+    if xtitle[xx] in xmodels[jj]:
         fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '">Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
 fhtml.write("</table>")
 
