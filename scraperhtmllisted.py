@@ -86,7 +86,7 @@ for aa in urls:
 now = datetime.datetime.now()
 
 # open the HTML output file
-fhtml = open('/home/drkhoe/public_html/pricesx.html','w')
+fhtml = open('/home/drkhoe/public_html/prices.html','w')
 
 # sort into product lists
 lendesc = len(xtitle)
