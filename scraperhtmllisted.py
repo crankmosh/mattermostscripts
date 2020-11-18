@@ -13,6 +13,7 @@ xtitle = []
 xvendor = []
 xmodels = []
 xurl = []
+xsize = ['65','75','77','82','86']
 
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 
@@ -60,23 +61,22 @@ def get_price(url):
         xurl.append(url)
     titletag = soup.title.string
     if titletag:
+       rsize = [ele for ele in xsize if (ele in titletag)]
        if 'X90CH' in titletag:
-           xtitle.append("Sony X90CH")
+           xtitle.append("Sony X90CH " + rsize)
        elif 'X900H' in titletag:
-           xtitle.append("Sony X900H")
+           xtitle.append("Sony X900H " + rsize)
        elif 'TCL' in titletag:
-           xtitle.append("TCL R635")
+           xtitle.append("TCL R635 " + rsize)
        elif 'VIZIO' in titletag:
-           xtitle.append("Vizio M-Series")
+           xtitle.append("Vizio M-Series " + rsize)
        elif 'A8H' in titletag:
-           xtitle.append("Sony OLED A8H")
+           xtitle.append("Sony OLED A8H " + rsize)
        elif 'H9G' in titletag:
-           xtitle.append("Hisense H9G")
+           xtitle.append("Hisense H9G " + rsize)
        elif 'CX' in titletag:
-           if '65' in titletag:
-            xtitle.append("LG CX 65in OLED")
-           if '77' in titletag:
-            xtitle.append("LG CX 77in OLED")
+           xtitle.append("LG CX OLED " + rsize)
+
             
 # open urls.txt which is the URLs file
 with open('/home/drkhoe/mattermostscripts/urls.txt') as f:
