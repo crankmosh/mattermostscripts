@@ -101,12 +101,11 @@ fhtml.write('<table class="styled-table">')
 
 # iterate and bubble sort list
 for xx in range(lendesc):
-   fhtml.write("<thead><tr><th>")
+   fhtml.write("<thead><tr><th colspan=0>")
    ytitle = xtitle[xx]
    fhtml.write(ytitle + "</th></tr></thead>")
-   for yy in range(lendesc):
-    if xtitle[yy] in ytitle:
-        fhtml.write("<tr><td>" + xvendor[yy] + '</td><td><a href="' + xurl[yy] + '">Click Here</a></td><td>"' + xprice[yy] + "</td></tr>")
+   if xtitle[xx] in ytitle:
+        fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '">Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
 fhtml.write("</table>")
 
 # write update time to HTML file
