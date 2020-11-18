@@ -109,7 +109,7 @@ for jj in range(lenmodels):
     fhtml.write(xmodels[jj] + "</th></tr></thead>")
     for xx in range(lendesc):
         if xtitle[xx] in xmodels[jj]:
-            fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + ' target=_newlookup">Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
+            fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '" target=_newlookup>Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
 fhtml.write("</table>")
 
 # write update time to HTML file
