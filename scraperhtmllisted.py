@@ -106,10 +106,10 @@ lenmodels = len(xmodels)
 # iterate list and write html
 for jj in range(lenmodels):
     for xx in range(lendesc):
-    fhtml.write('<thead><tr><th colspan="0">')
-    fhtml.write(xmodels[jj] + "</th></tr></thead>")
-    if xtitle[xx] in xmodels[jj]:
-        fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '">Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
+        fhtml.write('<thead><tr><th colspan="0">')
+        fhtml.write(xmodels[jj] + "</th></tr></thead>")
+        if xtitle[xx] in xmodels[jj]:
+            fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '">Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
 fhtml.write("</table>")
 
 # write update time to HTML file
