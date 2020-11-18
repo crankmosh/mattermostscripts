@@ -73,7 +73,11 @@ def get_price(url):
        elif 'H9G' in titletag:
            xtitle.append("Hisense H9G")
        elif 'CX' in titletag:
-           xtitle.append("LG CX OLED")
+           if '65' in titletag:
+            xtitle.append("LG CX 65in OLED")
+           if '77' in titletag:
+            xtitle.append("LG CX 77in OLED")
+            
 # open urls.txt which is the URLs file
 with open('/home/drkhoe/mattermostscripts/urls.txt') as f:
    urls = f.read().splitlines()
