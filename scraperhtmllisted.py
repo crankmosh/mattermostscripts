@@ -11,7 +11,7 @@ import pprint as pp
 xprice = []
 xtitle = []
 xvendor = []
-
+xmodels = []
 xurl = []
 
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
@@ -91,7 +91,6 @@ fhtml = open('/home/drkhoe/public_html/pricesx.html','w')
 # sort into product lists
 lendesc = len(xtitle)
 
-
 fhtml.write("<!DOCTYPE html>")
 fhtml.write("<head>")
 fhtml.write("<title>TV Price Scraper Output</title>")
@@ -99,12 +98,16 @@ fhtml.write('<link rel="stylesheet" href="style.css"/>')
 fhtml.write("</head><body>")
 fhtml.write('<table class="styled-table">')
 
-# iterate and bubble sort list
+for jj in range(lendesc):
+   if xtitle[jj] not in xmodels:
+    xmodels.append(xtitle[jj])
+
+lenmodels = len(xmodels)    
+# iterate list and write html
 for xx in range(lendesc):
    fhtml.write("<thead><tr><th colspan=0>")
-   ytitle = xtitle[xx]
    fhtml.write(ytitle + "</th></tr></thead>")
-   if xtitle[xx] in ytitle:
+   if xtitle[xx] in xmodels[xx]:
         fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '">Click Here</a></td><td>' + xprice[xx] + "</td></tr>")
 fhtml.write("</table>")
 
