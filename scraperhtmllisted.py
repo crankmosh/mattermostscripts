@@ -63,7 +63,7 @@ def get_price(url):
     titletag = soup.title.string
     if titletag:
        res = [ele for ele in xsize if (ele in titletag)]
-       rsize.append = str(res)
+       rsize.append(str(res))
        if 'X90CH' in titletag:
            xtitle.append("Sony X90CH")
        elif 'X900H' in titletag:
