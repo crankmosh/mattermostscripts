@@ -76,6 +76,8 @@ def get_price(url):
            xtitle.append("Sony OLED A8H")
        elif 'H9G' in titletag:
            xtitle.append("Hisense H9G")
+       elif 'H8G' in titletag:
+           xtitle.append("Hisense H8G")
        elif 'CX' in titletag:
            xtitle.append("LG CX OLED")
 
