@@ -13,6 +13,7 @@ xtitle = []
 xvendor = []
 xmodels = []
 xurl = []
+rsize = []
 xsize = ['65','75','77','82','86']
 
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
@@ -62,21 +63,21 @@ def get_price(url):
     titletag = soup.title.string
     if titletag:
        res = [ele for ele in xsize if (ele in titletag)]
-       rsize = str(res)
+       rsize.append = str(res)
        if 'X90CH' in titletag:
-           xtitle.append("Sony X90CH " + rsize)
+           xtitle.append("Sony X90CH")
        elif 'X900H' in titletag:
-           xtitle.append("Sony X900H " + rsize)
+           xtitle.append("Sony X900H")
        elif 'TCL' in titletag:
-           xtitle.append("TCL R635 " + rsize)
+           xtitle.append("TCL R635")
        elif 'VIZIO' in titletag:
-           xtitle.append("Vizio M-Series " + rsize)
+           xtitle.append("Vizio M-Series")
        elif 'A8H' in titletag:
-           xtitle.append("Sony OLED A8H " + rsize)
+           xtitle.append("Sony OLED A8H")
        elif 'H9G' in titletag:
-           xtitle.append("Hisense H9G " + rsize)
+           xtitle.append("Hisense H9G")
        elif 'CX' in titletag:
-           xtitle.append("LG CX OLED " + rsize)
+           xtitle.append("LG CX OLED")
 
             
 # open urls.txt which is the URLs file
@@ -114,7 +115,8 @@ for jj in range(lenmodels):
     fhtml.write(xmodels[jj] + "</th></tr></thead>\n")
     for xx in range(lendesc):
         if xtitle[xx] in xmodels[jj]:
-            fhtml.write("<tr><td>" + xvendor[xx] + '</td><td><a href="' + xurl[xx] + '" target=_newlookup>Click Here</a></td><td>' + xprice[xx] + "</td></tr>\n")
+            ssize = re.sub(r'\W+', '', rsize[xx])
+            fhtml.write("<tr><td>" + xvendor[xx] + '</td><td> Size: ' + ssize + '</td><td><a href="' + xurl[xx] + '" target=_newlookup>Click Here</a></td><td>' + xprice[xx] + "</td></tr>\n")
 fhtml.write("</table>\n")
 
 # write update time to HTML file
