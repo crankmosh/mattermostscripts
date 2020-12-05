@@ -38,7 +38,7 @@ def get_price(url):
         xurl.append(url)
     elif 'bestbuy' in url:
         #pricetag = (soup.find('span',class_="aria-hidden")).text
-        pricetag = (soup.find('span',class_="sr-only")).text
+        pricetag = (soup.find('span',class_="sr-only")).text.replace('Your price for this item is','')
         if pricetag is not None:
             xprice.append(pricetag)
         else:
@@ -81,6 +81,8 @@ def get_price(url):
            xtitle.append("Hisense H8G")
        elif 'CX' in titletag:
            xtitle.append("LG CX OLED")
+       else:
+           xtitle.append(titletag)
 
             
 # open urls.txt which is the URLs file
