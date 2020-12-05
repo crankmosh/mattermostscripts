@@ -37,7 +37,7 @@ def get_price(url):
         xvendor.append("Costco")
         xurl.append(url)
     elif 'bestbuy' in url:
-        pricetag = (soup.find('span',class_="price")).text
+        pricetag = (soup.find('span',class_="aria-hidden")).text
         if pricetag is not None:
             xprice.append(pricetag)
         else:
