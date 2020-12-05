@@ -14,7 +14,7 @@ xvendor = []
 xmodels = []
 xurl = []
 rsize = []
-xsize = ['65','75','77','82','86']
+xsize = ['65','75','77','82','86','4K']
 
 user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 
