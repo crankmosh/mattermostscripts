@@ -38,7 +38,7 @@ def get_price(url):
         xurl.append(url)
     elif 'bestbuy' in url:
         #pricetag = (soup.find('span',class_="aria-hidden")).text
-        pricetag = (soup.find('span',class="sr-only")).text
+        pricetag = (soup.find('span',class_="sr-only")).text
         if pricetag is not None:
             xprice.append(pricetag)
         else:
