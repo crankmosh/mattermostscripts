@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import datetime
 import pprint as pp
 from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
+import logging
 
 # setup the basic list
 xprice = []
