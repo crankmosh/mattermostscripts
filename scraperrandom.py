@@ -23,6 +23,7 @@ user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 # price grabber for various sites
 def get_price(url):
     webpage = req_proxy.generate_proxied_request(url)
+    print (webpage)
     if webpage is not None:
         soup = BeautifulSoup(webpage, "lxml")
     if 'costco' in url:
