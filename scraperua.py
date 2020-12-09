@@ -27,7 +27,7 @@ def get_price(url):
     req = urllib.request.Request(
        url,
        data=None,
-       headers={'Host': '*','User-Agent': ua[uai],'Accept':'*/*' }
+       headers={'User-Agent': ua[uai],'Accept':'*/*' }
     )
     webpage = urllib.request.urlopen(req,timeout=60).read()
     if webpage is not None:
