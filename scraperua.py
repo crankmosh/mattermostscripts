@@ -29,7 +29,7 @@ def get_price(url):
        data=None,
        headers={'User-Agent': ua[uai] }
     )
-    webpage = urllib.request.urlopen(req,timeout=30).read()
+    webpage = urllib.request.urlopen(req,timeout=60).read()
     if webpage is not None:
         soup = BeautifulSoup(webpage, "lxml")
     if 'costco' in url:
