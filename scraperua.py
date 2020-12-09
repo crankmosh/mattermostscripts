@@ -21,7 +21,7 @@ user_agent = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'
 
 # price grabber for various sites
 def get_price(url):
-    uai = random.randint(0,len(ua))
+    uai = random.randint(1,len(ua))
     print (ua[uai])
     print (url)
     req = urllib.request.Request(
